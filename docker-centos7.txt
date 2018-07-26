@@ -1,0 +1,32 @@
+# --------------------
+cd basic-centos7
+docker build -t restest/basic-centos7 .
+cd -
+
+# --------------------
+cd basic-srv
+docker build -t restest/basic-srv .
+cd -
+
+# --------------------
+cd restest-srv
+docker build -t restest/restest-srv .
+cd -
+
+# --------------------
+# -d --rm
+# docker run --rm -p 1337:8080 --name restest restest/restest-srv
+docker run --rm -p 8099:8080 --name restest --volume /opt/docker/restest/data:/data restest/restest-srv
+http://localhost:1337
+
+# --------------------
+docker exect -ti restest bash
+export TERM=xterm
+
+# less /var/log/nginx/reverse-proxy-access.log
+
+# --------------------
+docker stop restest
+docker start restest
+
+# EOF
