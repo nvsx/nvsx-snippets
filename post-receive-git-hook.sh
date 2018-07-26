@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# filename: post-receive
+
 LOGFILE=/home/username/commit-log.txt
 DATE=`date +"%Y-%m-%d_%H:%M:%S"`
 
