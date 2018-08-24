@@ -1,6 +1,6 @@
 # Docker
 
-bash```
+```bash
 # list running containers:
 $ docker ps
 # list ALL containers:
