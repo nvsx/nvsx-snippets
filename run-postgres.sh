@@ -11,6 +11,9 @@ else
 fi
 echo "starting docker postgres...."
 echo "---------------------------------------------------------------------"
-docker run --rm -p5432:5432 -v $(pwd)/postgres_db_data:/var/lib/postgresql/data postgres
+echo "using password test"
+echo "using data_dir $(pwd)/postgres_db_data"
+echo "shut down with CTRL+C"
+docker run --rm -p5432:5432 -e POSTGRES_PASSWORD=test -v $(pwd)/postgres_db_data:/var/lib/postgresql/data postgres
 
 #EOF
