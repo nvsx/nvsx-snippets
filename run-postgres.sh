@@ -9,11 +9,12 @@ else
   echo "postgres_db_data directory not found, trying to create directory, postgres will be empty"
   mkdir $(pwd)/postgres_db_data
 fi
+echo "using data_dir $(pwd)/postgres_db_data"
+echo "using password test"
+echo "connect with user:postgres pwd:test database:template1"
+echo "shut down with CTRL+C"
 echo "starting docker postgres...."
 echo "---------------------------------------------------------------------"
-echo "using password test"
-echo "using data_dir $(pwd)/postgres_db_data"
-echo "shut down with CTRL+C"
 docker run --rm -p5432:5432 -e POSTGRES_PASSWORD=test -v $(pwd)/postgres_db_data:/var/lib/postgresql/data postgres
 
 #EOF
