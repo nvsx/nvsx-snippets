@@ -11,7 +11,7 @@ else
 fi
 echo "using data_dir $(pwd)/postgres_db_data"
 echo "using password test"
-echo "connect with user:postgres pwd:test database:template1"
+echo "connect with user:postgres pwd:test database:template1 port:5432"
 echo "shut down with CTRL+C"
 echo "starting docker postgres...."
 echo "---------------------------------------------------------------------"
